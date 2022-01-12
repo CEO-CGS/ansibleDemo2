@@ -14,3 +14,4 @@ Shows all the errors recorded from Github Action runs
 |05-01-2022 | ['error.py', '[  File "main.py", line 19,', '    print("Hello World),', '                      ^,', 'SyntaxError: EOL while scanning string literal]']|
 |09-01-2022 | ['error.py', '[  File "main.py", line 19,', '    print("Hello World),', '                      ^,', 'SyntaxError: EOL while scanning string literal]']|
 |12-01-2022 | ['error.py', '[  File "main.py", line 19,', '    print("Hello World),', '                      ^,', 'SyntaxError: EOL while scanning string literal]']|
+|12-01-2022 | ['error.py', '[  File "main.py", line 19,', '    print("Hello World),', '                      ^,', 'SyntaxError: EOL while scanning string literal]']|
