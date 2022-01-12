@@ -15,7 +15,7 @@ user = g.get_user()
 for repo in user.get_repos():
     print(repo.name)
     
-repo = g.get_repo("CEO-CGS/ansibleDemo")
+repo = g.get_repo("CEO-CGS/ansibleDemo2")
 contents = repo.get_contents("/errors/README.md")
 
 #adds new content
