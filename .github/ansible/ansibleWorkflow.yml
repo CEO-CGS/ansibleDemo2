@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install github
+      command: pip install PyGithub
+    - name: ensure latest sysstat is installed
+      apt:
+        name: sysstat
+        state: latest
+    - name: run my script!
+      command: chdir=../../src python main.py hi
+      delegate_to: 127.0.0.1
+      run_once: true
+      register: python_result
+      ignore_errors: true
+  
+    - name: Get stdout or stderr from the output
+      environment:
+          ACCESS_TOKEN: "{{ lookup('env', 'ACCESS_TOKEN') }}"
+      command: chdir=../../src python error.py {{python_result.stderr_lines}}
+      delegate_to: 127.0.0.1
+      run_once: true
+      when: python_result.stderr != ""
+      register: error_log_result
+      
+#
+#    - name: Get stdout or stderr from the output
+#      command: echo {{error_log_result.stdout}}
